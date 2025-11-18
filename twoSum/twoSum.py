@@ -13,6 +13,7 @@ class Solution(object):
             num_to_index[num] = index
         return []  # In case there is no solution, though the problem guarantees one.
     
-# Example usage:
-sol = Solution()
-print(sol.twoSum([2, 7, 11, 15], 9))  # Output: [0, 1]
+if __name__ == "__main__":
+    # Example usage (only runs when executed directly):
+    sol = Solution()
+    print(sol.twoSum([2, 7, 11, 15], 9))  # Output: [0, 1]
