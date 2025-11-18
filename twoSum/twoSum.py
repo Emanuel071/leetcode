@@ -7,6 +7,7 @@ class Solution(object):
         """
         num_to_index = {}
         for index, num in enumerate(nums):
+            print(f"Index: {index}, Num: {num}")  # Debug statement
             complement = target - num
             if complement in num_to_index:
                 return [num_to_index[complement], index]
