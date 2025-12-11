@@ -7,6 +7,7 @@ class Solution(object):
         # binary representation: 1011
         # number of '1's: 3
         count = 0
+        print(f"Initial n: {bin(n)}")
         while n:
             # print(f"n before: {bin(n)}, count: {count}")
             count += n & 1

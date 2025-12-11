@@ -9,22 +9,21 @@ class Solution(object):
         max_length = 0
         
         for right, char in enumerate(s):
-            print("Right index:", right, "Character:", char)
-            print("Left index:", left)
-            print(char_index_map)
+            # print(char_index_map)
             if char in char_index_map and char_index_map[char] >= left:
                 left = char_index_map[char] + 1
-                print("Updated left:", left)
+                # print("Updated left:", left)
             char_index_map[char] = right
-            print("Updated char_index_map:", char_index_map)
             max_length = max(max_length, right - left + 1)
-            print("Current max_length:", max_length)
+            # print("Current max_length:", max_length)
+            print("right:", right, " char:", char, " left:", left, " max_length:", max_length)
+            print("Updated char_index_map:", char_index_map)
             print("----")
         
         return max_length
     
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.lengthOfLongestSubstring("abcabcbb"))  # Output: 3
+    # print(sol.lengthOfLongestSubstring("abcabcbb"))  # Output: 3
     # print(sol.lengthOfLongestSubstring("bbbbb"))     # Output: 1
-    # print(sol.lengthOfLongestSubstring("pwwkew"))    # Output: 3    
+    print(sol.lengthOfLongestSubstring("pwwkew"))    # Output: 3    
