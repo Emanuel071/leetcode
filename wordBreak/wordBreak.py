@@ -17,6 +17,7 @@ class Solution(object):
             # Check all possible previous positions
             for j in range(i):
                 # If s[0:j] is segmentable and s[j:i] exists in wordDict, mark s[0:i] as segmentable
+                print(dp[j], s[j:i])
                 if dp[j] and s[j:i] in word_set:
                     dp[i] = True
                     break  # No need to check further for this position

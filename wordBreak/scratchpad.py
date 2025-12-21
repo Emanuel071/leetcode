@@ -45,5 +45,19 @@ class Solution(object):
 
 if __name__ == "__main__":
     sol = Solution()
-    result = sol.wordBreak("leetcode", ["leet","code"])  # Output: True
-    print(result)
+    # result = sol.wordBreak("leetcode", ["leet","code"])  # Output: True
+    # print(result)
+
+s = "leetcode"
+# Iterate through each position in the string
+for i in range(1, len(s) + 1):
+    # print("index: ", i)
+    # print("s[0:i]: ", s[0:i])
+    # Check all possible previous positions
+    for j in range(i):
+        print("  j index: ", j)
+        print("  s[0:j]: ", s[0:j])
+        print("  s[j:i]: ", s[j:i])
+        print("----")   
+
+
