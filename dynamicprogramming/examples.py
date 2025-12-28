@@ -20,14 +20,15 @@ def coin_change(coins, amount):
     Builds solution from bottom up using a table.
     Time: O(amount * len(coins)), Space: O(amount)
     """
-    dp = [float('inf')] * (amount + 1)
-    dp[0] = 0
-    
-    for coin in coins:
-        for i in range(coin, amount + 1):
-            dp[i] = min(dp[i], dp[i - coin] + 1)
-    
-    return dp[amount] if dp[amount] != float('inf') else -1
+    dp = [float('inf')] * (amount + 1)  # Initialize a DP table with infinity for amounts 0 to 'amount'
+    dp[0] = 0  # Base case: 0 coins needed to make an amount of 0
+
+    for coin in coins:  # Iterate through each coin denomination
+        for i in range(coin, amount + 1):  # Iterate through amounts from 'coin' to 'amount'
+            dp[i] = min(dp[i], dp[i - coin] + 1)  # Update the minimum number of coins needed for amount 'i'
+            # either keep the current value, or use the current coin and add 1 to the number of coins needed for the remaining amount
+
+    return dp[amount] if dp[amount] != float('inf') else -1  # Return the minimum coins needed for 'amount', or -1 if it's impossible
 
 
 # 3. Longest Common Subsequence - 2D DP
