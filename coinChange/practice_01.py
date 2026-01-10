@@ -7,7 +7,7 @@ class Solution(object):
         """
         dp = [float('inf')] * (amount + 1)  # Initialize a DP table with infinity for amounts 0 to 'amount'
         dp[0] = 0  # Base case: 0 coins needed to make an amount of 0
-        print("Initial DP table:", dp)
+        # print("Initial DP table:", dp)
         for coin in coins:  # Iterate through each coin denomination
             for i in range(coin, amount + 1):  # Iterate through amounts from 'coin' to 'amount'
                 dp[i] = min(dp[i], dp[i - coin] + 1)  # Update the minimum number of coins needed for amount 'i'
